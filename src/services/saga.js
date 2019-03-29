@@ -1,5 +1,5 @@
 import axios from "axios";
-import { put, takeEvery } from "redux-saga/effects";
+import { put, takeEvery, delay } from "redux-saga/effects";
 import * as actions from "../actions/";
 import { LOAD_WEATHER_DATA } from "../constants/action-types";
 
@@ -10,6 +10,7 @@ const baseUrl =
 // sending request with payload
 function* loadWeatherData(action) {
   const response = yield axios.get(`${baseUrl}${action.payload}`);
+  yield delay(1000);
   yield put(actions.loadWeatherDataSuccess(response.data, action.key));
 }
 

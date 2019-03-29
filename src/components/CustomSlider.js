@@ -11,7 +11,6 @@ class CustomSlider extends Component {
     this.props.loadWeatherData(list[0], sliderId);
   }
 
-
   settings = {
     dots: true,
     lazyLoad: true,
@@ -30,8 +29,9 @@ class CustomSlider extends Component {
   render() {
     const { sliderId, weather } = this.props;
     const weatherData = weather[sliderId];
+
     return (
-      <div className="col-md-4">
+      <div className="col-md-4 col-sm-4 col-lg-4 col-xs-12 margin-bottom-20">
         <Slider {...this.settings}>
           {this.props.list.map(key => (
             <Weather
@@ -41,7 +41,7 @@ class CustomSlider extends Component {
               sliderId={sliderId}
               city={key}
             />
-          ))} 
+          ))}
         </Slider>
       </div>
     );

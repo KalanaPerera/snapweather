@@ -11,8 +11,29 @@ class Weather extends Component {
   render() {
     const { theme, weather, sliderId, city } = this.props;
 
-    if (Object.keys(weather).length === 0) {
-      return null;
+    const weatherData = weather.data;
+
+    if (typeof weather.loading === "undefined" || weather.loading === true) {
+      return (
+        <div className="component-main-weather ">
+          <div className="component-weather" style={{ minHeight: "345px" }}>
+            <div className="loading-container loading">
+              <div className="loading-content">
+                <div className="stripe long-stripe" />
+                <div className="stripe long-stripe" />
+                <div className="stripe medium-stripe loader-center " />
+                <div className="stripe medium-stripe loader-center " />
+
+                <div className="stripe medium-stripe loader-center " />
+                <div className="stripe medium-stripe loader-center" />
+                <div className="stripe medium-stripe loader-center" />
+                <div className="stripe long-stripe" />
+                <div className="stripe long-stripe" />
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
 
     return (
@@ -30,25 +51,34 @@ class Weather extends Component {
           </div>
 
           <div className="body">
-            <span className="custom-icon-cloud" />
+            <span className="custom-icon-cloud " />
           </div>
 
           <div className={"details  clearfix " + theme}>
-            <div className="col-md-3">
-              <span className="font-35 bold"> {weather.current.temp_c}° </span>
+            <div className="col-md-3 col-xs-3 col-sm-3">
+              <span className="font-35 bold">
+                {" "}
+                {weatherData.current.temp_c}°{" "}
+              </span>
             </div>
 
-            <div className="col-md-7">
-              <span className="font-20 name">{weather.location.name}</span>
-              <span className="block font-12 ">{weather.location.country}</span>
+            <div className="col-md-7 col-xs-7 col-sm-2">
+              <span className="font-20 name">{weatherData.location.name}</span>
+              <span className="block font-12 ">
+                {weatherData.location.country}
+              </span>
             </div>
 
-            <div className="col-md-2 border-left">
+            <div className="col-md-2 col-sm-2 col-xs-2 border-left">
               <span>
-                {moment(weather.location.localtime.split(" ")[0]).format("MMM")}
+                {moment(weatherData.location.localtime.split(" ")[0]).format(
+                  "MMM"
+                )}
               </span>
               <span className="font-20 block bold">
-                {moment(weather.location.localtime.split(" ")[0]).format("DD")}
+                {moment(weatherData.location.localtime.split(" ")[0]).format(
+                  "DD"
+                )}
               </span>
             </div>
           </div>
@@ -57,22 +87,22 @@ class Weather extends Component {
             <div className="set">
               <div className="list">
                 <i className="custom-icon i-wind"> </i>
-                <span> {weather.current.wind_mph} MPH</span>
+                <span> {weatherData.current.wind_mph} MPH</span>
               </div>
 
               <div className="list">
                 <i className="custom-icon i-rain-drop"> </i>
-                <span> {weather.current.humidity} %</span>
+                <span> {weatherData.current.humidity} %</span>
               </div>
 
               <div className="list">
                 <i
                   className={
                     "custom-icon " +
-                    (weather.current.is_day ? "i-sun " : " i-moon")
+                    (weatherData.current.is_day ? "i-sun " : " i-moon")
                   }
                 />
-                <span> {weather.current.is_day ? "Day " : " Night"}</span>
+                <span> {weatherData.current.is_day ? "Day " : " Night"}</span>
               </div>
             </div>
           </div>
