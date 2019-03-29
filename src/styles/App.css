@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700');
+
+html,
+body {
+  background-color: #646669;
+  font-family: 'Muli', sans-serif;
+
+
+}
+
+.col-lg-4.component-main-weather {
+  width: 33%;
+  padding-right: 30px;
+}
+
+.component-weather {
+  background-color: #fff !important;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.component-weather .header {
+  padding: 15px;
+}
+
+.component-weather .body {
+  text-align: center;
+  height: 100px;
+}
+
+.component-weather .details {
+  padding: 10px;
+  margin-top: 25px;
+  color: #fff;
+  text-align: left;
+  padding: 15px 0px 15px 0px;
+}
+
+.component-weather .details .border-left {
+  border-left: 1px solid rgba(121, 137, 142, 0.5);
+}
+
+.component-weather .bottom-details {
+  background-color: #2a3032;
+  color: #d7d7d7;
+  height: 110px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  text-align: center;
+}
+
+.component-weather .bottom-details .set {
+  display: table;
+  margin: 0 auto;
+  padding: 25px 0px 25px 0px;
+}
+
+.component-weather .bottom-details .list {
+  float: left;
+  margin-right: 20px;
+  display: inline-flex;
+}
+
+.component-weather .bottom-details .list span {
+  margin-left: 7px;
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+/* Themes by Weather Category */
+
+.theme-cloudy-sky {
+  background: #15c8d1;
+}
+
+.theme-heavy-rain {
+  background: #ff6c5e;
+}
+
+.theme-green-day {
+  background: #29df99;
+}
+
+/* Helper Styles */
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.bold{
+  font-weight: 600
+}
+
+.font-12{
+  font-size: 12px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-25 {
+  font-size: 25px;
+}
+
+.font-35 {
+  font-size: 35px;
+}
+
+.block {
+  display: block;
+}
+
+/* Application Icons */
+
+.custom-icon-cloud {
+  background-image: url("./img/cloud.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+.custom-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.i-wind {
+  background-image: url("./img/wind.png");
+}
+
+.i-rain-drop {
+  background-image: url("./img/raindrop.png");
+}
+
+.i-sun {
+  background-image: url("./img/sun.png");
+}
+
+.i-moon{
+  background-image: url("./img/moon.png");
+}
+
+/* Custom Slick Dots */
+
+.slick-dots {
+  bottom: 10px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #fff;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #fff;
+}
